@@ -27,3 +27,27 @@ function renderCart() {
 
       updateBill(subtotal);
     }
+
+function updateQty(index, newQty) {
+      cartItems[index].qty = parseInt(newQty);
+      renderCart();
+    }
+
+function removeItem(index) {
+      cartItems.splice(index, 1);
+      renderCart();
+    }
+
+function updateBill(subtotal) {
+      const tax = subtotal * 0.05;
+      const discount = subtotal * 0.10;
+      const grandTotal = subtotal + tax - discount;
+
+      document.getElementById('subtotal').innerText = `₹${subtotal.toFixed(2)}`;
+      document.getElementById('tax').innerText = `₹${tax.toFixed(2)}`;
+      document.getElementById('discount').innerText = `-₹${discount.toFixed(2)}`;
+      document.getElementById('grand-total').innerText = `₹${grandTotal.toFixed(2)}`;
+    }
+
+// Initial render
+renderCart();
