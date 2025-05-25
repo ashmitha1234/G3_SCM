@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+		<title>Amity Hostel | Final Cart & Billing</title>
+<style>
+body {
+	font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f4f4f8;
+        color: #333;
+    }
+
+header {
+        background: #34495e;
+        color: yellow;
+        padding: 1.5rem;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+.container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+h2 {
+        margin-top: 0;
+    }
+
+table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+    }
+
+th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+    }
+
+th {
+        background: #ecf0f1;
+    }
+
+.quantity input {
+      width: 60px;
+      padding: 4px;
+      text-align: center;
+    }
+
+.btn {
+      background: #2ecc71;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+.btn:hover {
+      background: #27ae60;
+    }
+
+.remove-btn {
+      background: #e74c3c;
+    }
+
+.remove-btn:hover {
+      background: #c0392b;
+    }
+
+.bill-summary {
+      margin-top: 2rem;
+      border-top: 2px dashed #bbb;
+      padding-top: 1rem;
+    }
+
+.summary-line {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+    }
+
+.total {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+.payment-method {
+      margin-top: 2rem;
+    }
+
+.payment-method select {
+      padding: 0.5rem;
+      border-radius: 5px;
+      width: 100%;
+      max-width: 300px;
+   }
+
+.download-btn {
+      margin-top: 1.5rem;
+      background: #2980b9;
+    }
+
+.download-btn:hover {
+      background: #21618c;
+    }
+
+footer {
+        margin-top: 3rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #777;
+    }
+</style>
+	</head>
+	<body>
+		<header>Amity University Hostel • Final Cart & Billing</header>
+
+		<div class="container">
+			<h2>🛍️  Your Selected Items</h2>
+                        <table id="cart-table">
+                                <thead>
+                                        <tr>
+                                        <th>Item</th>
+                                        <th>Quantity</th>
+                                        <th>Unit Price</th>
+                                        <th>Total</th>
+					<th>Remove</th>
+                                        </tr>
+                                </thead>
+				<tbody id="cart-body"></tbody> 
+                        </table>
+
+                        <div class="bill-summary">   
+				<div class="summary-line"><span>Subtotal</span><span id="subtotal">₹0</span>	</div>
+                                <div class="summary-line"><span>Tax (5%)</span><span id="tax">₹0</span></div>
+                                <div class="summary-line"><span>Discount (10%)</span><span id="discount">-₹0</span></div>
+                                <div class="summary-line"><span>Grand Total</span><span id="grand-total">₹0</span></div>
+                        </div>
+
+                        <div class="payment-method">
+                                <h3>💳 Choose Payment Method</h3>
+                                <select>
+                                        <option>UPI</option>
+                                        <option>Cash</option>
+                                        <option>Credit/Debit Card</option>
+                                        <option>Net Banking</option>
+                                </select>
+                        </div>
+
+                        <button class="btn download-btn" onclick="window.print()">🖨️  Print / Download Bill</button>
+		</div>
+
+		<footer>
+			© 2025 Amity Hostel Mess Management System. All rights reserved.
+		</footer>
+		<script>
+			const cartItems = [	
+                                { name: "Masala Dosa", qty: 2, price: 25 },
+                                { name: "Curd Rice", qty: 1, price: 20 },
+                                { name: "Chapati & Dal", qty: 3, price: 30 },
+                                { name: "Veg Pulao", qty: 1, price: 45 },
+                                { name: "Cutlet", qty: 2, price: 15 },
+                                { name: "Paneer Curry", qty: 1, price: 50 },
+                                { name: "Ghee Rice", qty: 1, price: 35 }
+                             ];
+ 
+                        const cartBody = document.getElementById('cart-body');
+
+                        function renderCart() {
+                                cartBody.innerHTML = '';
+                                let subtotal = 0;
+				cartItems.forEach((item, index) => {
+					const itemTotal = item.qty * item.price;
+					subtotal += itemTotal;
+
+					const row = document.createElement('tr');
+					row.innerHTML = `
+					<td>${item.name}</td>
+                                        <td class="quantity">
+					<input type="number" min="1" value="${item.qty}" onchange="updateQty(${index}, this.value)">
+					</td>
+                                        <td>₹${item.price}</td>
+                                        <td>₹${itemTotal}</td>
+					<td><button class="btn remove-btn" onclick="removeItem(${index})">Remove</button></td>
+						`;
+					cartBody.appendChild(row); 
+				});
+
+				updateBill(subtotal);
+			}
+
+			function updateQty(index, newQty) {
+				cartItems[index].qty = parseInt(newQty);
+				renderCart();
+			}
+
+			function removeItem(index) {
+				cartItems.splice(index, 1);
+                                renderCart();
+			}
+
+			function updateBill(subtotal) {
+				const tax = subtotal * 0.05;
+                                const discount = subtotal * 0.10;
+                                const grandTotal = subtotal + tax - discount;
+
+				document.getElementById('subtotal').innerText = `₹${subtotal.toFixed(2)}`;
+                                document.getElementById('tax').innerText = `₹${tax.toFixed(2)}`;
+                                document.getElementById('discount').innerText = `-₹${discount.toFixed(2)}`;
+                                document.getElementById('grand-total').innerText = `₹${grandTotal.toFixed(2)}`;
+			}
+
+			renderCart();
+		</script>
+	</body>
+</html>
