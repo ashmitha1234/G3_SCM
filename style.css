@@ -115,3 +115,10 @@ footer {
         font-size: 0.9rem;
         color: #777;
     }
+
+@media (max-width: 600px) {
+      .summary-line, .btn {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
