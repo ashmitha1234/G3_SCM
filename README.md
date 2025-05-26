@@ -3,6 +3,7 @@
 This repository contains the front-end code for the "Final Cart & Billing" page of the Amity University Hostel Mess Management System. This page allows users to review their selected food items, adjust quantities, remove items, and view a summary of their bill before proceeding with payment. 💳
 ________________________________________
 ✨ Features ✨
+
 •	Dynamic Cart Display: Items are rendered dynamically from a JavaScript array, showing item name, quantity, unit price, and total for each item. 🍎
 •	Quantity Adjustment: Users can easily update the quantity of any item directly within the cart. ➕➖
 •	Item Removal: Individual items can be removed from the cart. 🗑️
@@ -16,13 +17,15 @@ o	Grand Total: Displays the final amount payable after tax and discount. 💰
 •	Responsive Design: The page is designed to be user-friendly across various devices. 📱💻
 ________________________________________
 Technologies Used 🛠️
+
 •	HTML5: Structure of the web page. 📄
 •	CSS3: Styling for a clean and modern look. ✨
 •	JavaScript: Powers the dynamic cart functionality, quantity updates, item removal, and bill calculations. 💻
 ________________________________________
 👨‍👩‍👧‍👦 Team Members 🚀
+
 A big shout-out to the incredible team behind the Amity Hostel Mess Management System!
 •	Ashmitha T S: Final Cart & Billing 🌟
-•	Ajy: 👍
-•	Sachith: 👍
+•	Ajy: 
+•	Sachith: 
 
