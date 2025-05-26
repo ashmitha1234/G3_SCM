@@ -12,14 +12,19 @@ o	Subtotal: Calculates the sum of all items in the cart. 💲
 o	Tax: Automatically calculates a 5% tax on the subtotal. 🧾
 o	Discount: Applies a 10% discount on the subtotal. 🏷️
 o	Grand Total: Displays the final amount payable after tax and discount. 💰
+
 •	Payment Method Selection: A dropdown allows users to select their preferred payment method (UPI, Cash, Credit/Debit Card, Net Banking). 💳
+
 •	Print/Download Bill: A button to easily print or download the bill, leveraging the browser's print functionality. 🖨️
+
 •	Responsive Design: The page is designed to be user-friendly across various devices. 📱💻
 ________________________________________
 Technologies Used 🛠️
 
 •	HTML5: Structure of the web page. 📄
+
 •	CSS3: Styling for a clean and modern look. ✨
+
 •	JavaScript: Powers the dynamic cart functionality, quantity updates, item removal, and bill calculations. 💻
 ________________________________________
 👨‍👩‍👧‍👦 Team Members 🚀
@@ -27,6 +32,8 @@ ________________________________________
 A big shout-out to the incredible team behind the Amity Hostel Mess Management System!
 
 •	Ashmitha T S: Final Cart & Billing 🌟
+
 •	Ajay: 
+
 •	Sachith: 
 
