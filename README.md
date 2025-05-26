@@ -5,13 +5,17 @@ ________________________________________
 ✨ Features ✨
 
 •	Dynamic Cart Display: Items are rendered dynamically from a JavaScript array, showing item name, quantity, unit price, and total for each item. 🍎
+
 •	Quantity Adjustment: Users can easily update the quantity of any item directly within the cart. ➕➖
+
 •	Item Removal: Individual items can be removed from the cart. 🗑️
+
 •	Real-time Billing Summary: 
-o	Subtotal: Calculates the sum of all items in the cart. 💲
-o	Tax: Automatically calculates a 5% tax on the subtotal. 🧾
-o	Discount: Applies a 10% discount on the subtotal. 🏷️
-o	Grand Total: Displays the final amount payable after tax and discount. 💰
+
+       o	Subtotal: Calculates the sum of all items in the cart. 💲
+       o	Tax: Automatically calculates a 5% tax on the subtotal. 🧾
+       o	Discount: Applies a 10% discount on the subtotal. 🏷️
+       o	Grand Total: Displays the final amount payable after tax and discount. 💰
 
 •	Payment Method Selection: A dropdown allows users to select their preferred payment method (UPI, Cash, Credit/Debit Card, Net Banking). 💳
 
