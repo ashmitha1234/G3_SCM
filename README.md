@@ -25,7 +25,8 @@ ________________________________________
 👨‍👩‍👧‍👦 Team Members 🚀
 
 A big shout-out to the incredible team behind the Amity Hostel Mess Management System!
+
 •	Ashmitha T S: Final Cart & Billing 🌟
-•	Ajy: 
+•	Ajay: 
 •	Sachith: 
 
