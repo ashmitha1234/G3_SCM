@@ -1,4 +1,5 @@
 🍽️ Amity Hostel Mess Management System - Final Cart & Billing 🛒
+
 This repository contains the front-end code for the "Final Cart & Billing" page of the Amity University Hostel Mess Management System. This page allows users to review their selected food items, adjust quantities, remove items, and view a summary of their bill before proceeding with payment. 💳
 ________________________________________
 ✨ Features ✨
