@@ -37,7 +37,7 @@ A big shout-out to the incredible team behind the Amity Hostel Mess Management S
 
 •	Ashmitha T S: Final Cart & Billing 🌟
 
-•	Ajay: 
+•	Ajay Kumar: Menu page
 
-•	Sachith: 
+•	Sachith Kumar: Login page
 
