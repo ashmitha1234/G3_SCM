@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="UTF-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
 		<title>Amity Hostel | Final Cart & Billing</title>
 	</head>
 	<body>
 		<header>Amity University Hostel • Final Cart & Billing</header>
 
-		<div>
+		<div class="container">
 			<h2>🛍️  Your Selected Items</h2>
-                        <table>
+                        <table id="cart-table">
                                 <thead>
                                         <tr>
                                         <th>Item</th>
                                         <th>Quantity</th>
                                         <th>Unit Price</th>
                                         <th>Total</th>
+					<th>Remove</th>
                                         </tr>
                                 </thead>
+				<tbody id="cart-body"></tbody> 
                         </table>
 
-                        <div>   
-                                <div><span>Subtotal</span></div>
-                                <div><span>Tax (5%)</span></div>
-                                <div><span>Discount (10%)</span></div>
-                                <div><span>Grand Total</span></div>
+                        <div class="bill-summary">   
+				<div class="summary-line"><span>Subtotal</span><span id="subtotal">₹0</span>	</div>
+                                <div class="summary-line"><span>Tax (5%)</span><span id="tax">₹0</span></div>
+                                <div class="summary-line"><span>Discount (10%)</span><span id="discount">-₹0</span></div>
+                                <div class="summary-line"><span>Grand Total</span><span id="grand-total">₹0</span></div>
                         </div>
 
-                        <div>
+                        <div class="payment-method">
                                 <h3>💳 Choose Payment Method</h3>
                                 <select>
                                         <option>UPI</option>
@@ -36,7 +40,7 @@
                                 </select>
                         </div>
 
-                        <button>🖨️  Print / Download Bill</button>
+                        <button class="btn download-btn" onclick="window.print()">🖨️  Print / Download Bill</button>
 		</div>
 
 		<footer>

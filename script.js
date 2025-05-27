@@ -1,5 +1,11 @@
 const cartItems = [
       { name: "Masala Dosa", qty: 2, price: 25 },
+      { name: "Curd Rice", qty: 1, price: 20 },
+      { name: "Chapati & Dal", qty: 3, price: 30 },
+      { name: "Veg Pulao", qty: 1, price: 45 },
+      { name: "Cutlet", qty: 2, price: 15 },
+      { name: "Paneer Curry", qty: 1, price: 50 },
+      { name: "Ghee Rice", qty: 1, price: 35 }
     ];
 
 const cartBody = document.getElementById('cart-body');
@@ -49,5 +55,4 @@ function updateBill(subtotal) {
       document.getElementById('grand-total').innerText = `₹${grandTotal.toFixed(2)}`;
     }
 
-// Initial render
 renderCart();

@@ -116,9 +116,12 @@ footer {
         color: #777;
     }
 
+<<<<<<< HEAD
+=======
 @media (max-width: 600px) {
       .summary-line, .btn {
         flex-direction: column;
         align-items: flex-start;
       }
     }
+>>>>>>> master
